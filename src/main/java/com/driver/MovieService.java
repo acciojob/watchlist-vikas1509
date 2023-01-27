@@ -16,7 +16,7 @@ public class MovieService {
          movieRepository.addMovie(movie);
     }
 
-    public void  addDirector(Directore directore){
+    public void  addDirector(Director directore){
         movieRepository.addDirector(directore);
     }
     public void creatMovieDirectorPair(String movieName , String DirectoreName){
@@ -27,7 +27,7 @@ public class MovieService {
        Movie movie= movieRepository.findMovie(movieName);
        return movie;
     }
-    public Directore findDirector(String directorName){
+    public Director findDirector(String directorName){
      return  movieRepository.findDirector(directorName);
     }
     public void findMovieFromDirector(String movieName){

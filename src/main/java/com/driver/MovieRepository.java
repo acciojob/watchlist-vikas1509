@@ -9,12 +9,12 @@ import java.util.List;
 @Repository
 public class MovieRepository {
     private HashMap<String, Movie> movieMap;
-    private HashMap<String, Directore> directorMap;
+    private HashMap<String, Director> directorMap;
     private HashMap<String, List<String>> directorMovieMapping;
 
     public MovieRepository(){
         this.movieMap = new HashMap<String, Movie>();
-        this.directorMap = new HashMap<String, Directore>();
+        this.directorMap = new HashMap<String, Director>();
         this.directorMovieMapping = new HashMap<String, List<String>>();
     }
 
@@ -25,7 +25,7 @@ public class MovieRepository {
         return  "movie add Successfully";
     }
 
-    public String  addDirector(Directore directore){
+    public String  addDirector(Director directore){
         String dname=directore.getDName();
 
         directorMap.put(dname,directore);
@@ -49,7 +49,7 @@ public class MovieRepository {
         return movieMap.get(movieName);
     }
 
-    public  Directore findDirector(String directorName){
+    public Director findDirector(String directorName){
 
         return directorMap.get(directorName);
     }

@@ -12,7 +12,7 @@ public class MovieController {
 
 @Autowired
     MovieService movieService;
-    private org.springframework.http.ResponseEntity<Directore> ResponseEntity;
+    private org.springframework.http.ResponseEntity<Director> ResponseEntity;
 
     @PostMapping("/add_Movie")
     public ResponseEntity<String> addMovie(@RequestBody Movie movie){
@@ -21,7 +21,7 @@ public class MovieController {
     return new ResponseEntity<>("Movie Added Succesfully",HttpStatus.CREATED);
 }
 @PostMapping("/add_director")
-    public ResponseEntity<String> addDirector(@RequestBody Directore directore){
+    public ResponseEntity<String> addDirector(@RequestBody Director directore){
     movieService.addDirector(directore);
 
     return new ResponseEntity<>("Director Added Successfully",HttpStatus.CREATED);
@@ -42,8 +42,8 @@ public class MovieController {
 }
 
     @GetMapping("/get-director-by-name/{name}")
-    public ResponseEntity<Directore> getDirectorByName(@PathVariable String name){
-        Directore director = movieService.findDirector(name);
+    public ResponseEntity<Director> getDirectorByName(@PathVariable String name){
+        Director director = movieService.findDirector(name);
         return new ResponseEntity<>(director, HttpStatus.CREATED);
     }
    @GetMapping("/get_Movie_name/{name}")

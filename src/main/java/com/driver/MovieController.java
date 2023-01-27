@@ -33,7 +33,7 @@ public class MovieController {
     return new ResponseEntity<>("pair added successfully",HttpStatus.CREATED);
     }
 
-    @GetMapping("/get_Movie_by_name/{name}")
+    @GetMapping("/get-movie-by-name/{name}")
     public ResponseEntity<Movie> addMoviebyName(@PathVariable String name){
 
     Movie movie= movieService.findMovie(name);
@@ -46,13 +46,13 @@ public class MovieController {
         Director director = movieService.findDirector(name);
         return new ResponseEntity<>(director, HttpStatus.CREATED);
     }
-   @GetMapping("/get_Movie_name/{name}")
+   @GetMapping("/get-movie-by-name/{name}")
     public ResponseEntity<Movie> findMovie(@PathVariable String name){
        Movie movie= movieService.findMovie(name);
        return new ResponseEntity<>(movie, HttpStatus.CREATED);
 
    }
-   @GetMapping("get_all_movie{/name}")
+   @GetMapping("/get-all-movies")
     public ResponseEntity<List<String >> getAllMovieName(){
         List<String> allmoviename ;//= new ArrayList<>();
       allmoviename=  movieService.findAllMovie();
@@ -60,13 +60,13 @@ public class MovieController {
        return new ResponseEntity<>(allmoviename, HttpStatus.CREATED);
 
    }
-   @DeleteMapping("/Delete_director_by_Name")
+   @DeleteMapping("/delete-director-by-name")
     public ResponseEntity<String> deleteDirectorName(@RequestParam String director){
         movieService.DeleteDirectorkiMovie(director);
         return new ResponseEntity<>("Removed Successfully",HttpStatus.CREATED);
    }
 
-   @DeleteMapping("/Delete_all")
+   @DeleteMapping("delete-all-directors")
     public ResponseEntity<String> deleteAll(){
         movieService.deleteAllDirector();
         return new ResponseEntity<>("Deleted all",HttpStatus.CREATED);

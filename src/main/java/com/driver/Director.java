@@ -2,12 +2,12 @@ package com.driver;
 
 //Director.java Class - String name, int numberOfMovies, double imdbRating, no-args constructor, all-args constructor and getters-setters
 public class Director {
-    private  String Dname ;
+    private  String name ;
     private int numberOfMovies;
     private double imdbRating;
 
-    public Director(String Dname , int numberOfMovies, int imdbRating){
-        this.Dname=Dname;
+    public Director(String name , int numberOfMovies, int imdbRating){
+        this.name=name;
         this. numberOfMovies=numberOfMovies;
         this.imdbRating=imdbRating;
     }
@@ -24,11 +24,11 @@ public class Director {
     }
 
     public String getDName() {
-        return Dname;
+        return name;
     }
 
     public void setDName(String name) {
-        this.Dname = Dname;
+        this.name = name;
     }
 
     public int getNumberOfMovies() {

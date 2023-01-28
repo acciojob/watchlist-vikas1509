@@ -19,9 +19,12 @@ public class MovieService {
     public void  addDirector(Director directore){
         movieRepository.addDirector(directore);
     }
-    public void creatMovieDirectorPair(String movieName , String DirectoreName){
+    public void addMovieDirectorPair(String movieName , String DirectoreName){
 
         movieRepository.addMovieDirectorePair(movieName,DirectoreName);
+    }
+    public void createMovieDirectorPair(String movie, String  director){
+        movieRepository.addMovieDirectorePair(movie,director);
     }
     public Movie findMovie(String movieName){
        Movie movie= movieRepository.findMovie(movieName);
@@ -30,19 +33,19 @@ public class MovieService {
     public Director findDirector(String directorName){
      return  movieRepository.findDirector(directorName);
     }
-    public void findMovieFromDirector(String movieName){
-
-movieRepository.findMoviesfromDirector(movieName);
+    public List<String> findMoviesFromDirector(String movieName){
+List<String> movies = movieRepository.findMoviesfromDirector(movieName);
+return movies;
     }
-    public List<String > findAllMovie(){
+    public List<String > findAllMovies(){
         List<String> allMovie = new ArrayList<>();
        allMovie= movieRepository.findAllMovie();
         return allMovie;
     }
-public void DeleteDirectorkiMovie(String directorName){
+public void deleteDirector(String directorName){
         movieRepository.deleteDirectorkimovie(directorName);
 }
-public void deleteAllDirector(){
+public void deleteAllDirectors(){
         movieRepository.DeleteMovieofallDirectore();
 }
 }

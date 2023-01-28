@@ -26,7 +26,7 @@ public class MovieRepository {
     }
 
     public String  addDirector(Director directore){
-        String dname=directore.getDName();
+        String dname=directore.getName();
 
         directorMap.put(dname,directore);
 
